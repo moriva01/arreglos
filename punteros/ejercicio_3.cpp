@@ -16,11 +16,12 @@ animal *a;
 
 */
 
-#include<iostream>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-typedef struct animal
+struct animal
 {
     string tipo_animal;
     string nombre_animal;
@@ -28,23 +29,29 @@ typedef struct animal
     string nombre_dueno;
 };
 
-int main(){
+int main()
+{
 
-animal *a new animal;//apuntador de tipo animal (estructura creada anteriormente)
+    animal *a = new animal; // apuntador de tipo animal (estructura creada anteriormente)
 
+    cout << "Ingresa el tipo de animal: "; // pedir datos y pasarlos a la memoria
+    cin >> a->tipo_animal;
 
-cout<<"Ingresa el tipo de animal: ";//pedir datos y pasarlos a la memoria
-cin>>a->tipo_animal>>endl;
+    cout << "Ingresa el nombre del animal: ";
+    cin >> a->nombre_animal;
 
-cout<<"Ingresa el nombre del animal: ";
-cin>>a->nombre_animal>>endl;
+    cout << "Ingresa edad del animal: ";
+    cin >> a->edad;
 
-cout<<"Ingresa edad del animal: ";
-cin>>a->edad>>endl;
+    cout << "Ingresa el nombre del dueño del animal: ";
+    cin >> a->nombre_dueno;
 
-cout<<"Ingresa el nombre del dueño del animal: ";
-cin>>a->nombre_dueno >>endl;
-
-
+    cout << "--------------------------------------------" << endl;
+    cout << "--------------Datos animal: " << endl;
+    cout << "-Tipo: " << a->tipo_animal << endl;
+    cout << "-Nombre: " << a->nombre_animal << endl;
+    cout << "-Edad: " << a->edad << endl;
+    cout << "-Nombre dueño: " << a->nombre_dueno << endl;
+    cout << "--------------------------------------------" << endl;
     return 0;
 }
